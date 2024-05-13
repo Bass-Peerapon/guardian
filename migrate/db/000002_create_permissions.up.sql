@@ -1,0 +1,9 @@
+CREATE TABLE permissions (
+  id VARCHAR(255) NOT NULL,
+  app_id VARCHAR(255) NOT NULL REFERENCES applications(id) ON DELETE CASCADE,
+  name VARCHAR(255) NOT NULL,
+  description VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+  PRIMARY KEY (id,app_id)
+);
